@@ -1009,6 +1009,8 @@
 						var $win = angular.element($window);
 						$win.on('resize', onResize);
 
+						scope.$on('resize-gridster', onResize);
+
 						scope.$watch(function() {
 							return $elem[0].offsetWidth || parseInt($elem.css('width'), 10);
 						}, resize);

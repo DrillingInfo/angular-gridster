@@ -1244,6 +1244,15 @@
 				var inputTags = ['select', 'input', 'textarea', 'button'];
 
 				function mouseDown(e) {
+					if (gridster.draggable.handle) {
+						var handle = gridster.draggable.handle,
+							handleClass = handle.substr(1, handle.length);
+						if (!angular.element(e.target).hasClass(handleClass) &&
+							(angular.element(e.target).closest(handle).length === 0)) {
+							return false;
+						}
+					}
+
 					if (inputTags.indexOf(e.target.nodeName.toLowerCase()) !== -1) {
 						return false;
 					}

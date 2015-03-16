@@ -1786,9 +1786,9 @@
 				}
 
 				var handles = [];
-				var handlesOpts = gridster.resizable.handles;
+				var handlesOpts = itemOptions.handles || gridster.resizable.handles;
 				if (typeof handlesOpts === 'string') {
-					handlesOpts = gridster.resizable.handles.split(',');
+					handlesOpts = handlesOpts.split(',');
 				}
 				var enabled = false;
 

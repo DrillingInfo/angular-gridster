@@ -1244,6 +1244,8 @@
 				var inputTags = ['select', 'input', 'textarea', 'button'];
 
 				function mouseDown(e) {
+					// exit if there is a handle specified and the mousedown wasn't in that handle or a child
+					// of that handle
 					if (gridster.draggable.handle) {
 						var handle = gridster.draggable.handle,
 							handleClass = handle.substr(1, handle.length);
